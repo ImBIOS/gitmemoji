@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/lodash': ^4.14.192
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@types/styled-components': ^5.1.26
@@ -23,6 +24,7 @@ dependencies:
   styled-components: 5.3.9_vtcxgy2wlmese7djxl6h7ok674
 
 devDependencies:
+  '@types/lodash': 4.14.192
   '@types/react': 18.0.31
   '@types/react-dom': 18.0.11
   '@types/styled-components': 5.1.26
@@ -516,6 +518,10 @@ packages:
     dependencies:
       '@types/react': 18.0.31
       hoist-non-react-statics: 3.3.2
+    dev: true
+
+  /@types/lodash/4.14.192:
+    resolution: {integrity: sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==}
     dev: true
 
   /@types/prop-types/15.7.5:
