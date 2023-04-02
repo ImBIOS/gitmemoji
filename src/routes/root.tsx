@@ -15,7 +15,7 @@ const Root: React.FC = () => {
         </Title>
         <Description>
           Learn{' '}
-          <ExternalLink href="https://gitmoji.imam.dev/">
+          <ExternalLink href="https://gitmemoji.imam.dev/">
             gitmoji!
           </ExternalLink>
         </Description>
