@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "snyk-security.snyk-vulnerability-scanner",
+    "usernamehw.errorlens",
+    "snyk-security.vscode-vuln-cost",
+    "wix.vscode-import-cost"
+  ],
+  "unwantedRecommendations": ["heybourn.headwind"]
+}
