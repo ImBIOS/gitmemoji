@@ -8,11 +8,7 @@ interface EmojiCardProps {
   className?: string;
 }
 
-const MinimalEmojiCard: React.FC<EmojiCardProps> = ({
-  emojiData,
-  onClick,
-  className,
-}) => {
+const MinimalEmojiCard = ({ emojiData, onClick, className }: EmojiCardProps) => {
   return (
     <Emoji
       style={{

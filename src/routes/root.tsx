@@ -14,16 +14,13 @@ const Root: React.FC = () => {
           Git<b>me</b>moji
         </Title>
         <Description>
-          Learn{' '}
-          <ExternalLink href="https://gitmemoji.imam.dev/">
-            gitmoji!
-          </ExternalLink>
+          Learn <ExternalLink href='https://gitmemoji.imam.dev/'>gitmoji!</ExternalLink>
         </Description>
       </Group>
       <GitHubButton />
       <Group>
-        <GoToQuiz to="/easy">Quiz for newbies</GoToQuiz>
-        <GoToQuiz to="/hard">Quiz for gurus</GoToQuiz>
+        <GoToQuiz to='/easy'>Quiz for newbies</GoToQuiz>
+        <GoToQuiz to='/hard'>Quiz for gurus</GoToQuiz>
       </Group>
     </Layout>
   );

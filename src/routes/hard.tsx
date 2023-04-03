@@ -32,17 +32,13 @@ const HardQuiz: React.FC = () => {
             <MinimalEmojiCard
               emojiData={emoji}
               key={emoji.code}
-              className={
-                shake === emoji.name ? 'shake shake-constant' : ''
-              }
+              className={shake === emoji.name ? 'shake shake-constant' : ''}
               onClick={async () => {
                 if (emoji.name === currentQuestion.name) {
                   return setNewQuestion();
                 }
                 setShake(emoji.name);
-                await new Promise((resolve) =>
-                  setTimeout(resolve, 1000)
-                );
+                await new Promise((resolve) => setTimeout(resolve, 1000));
                 setShake(null);
               }}
             />
@@ -51,8 +47,8 @@ const HardQuiz: React.FC = () => {
       </HardGrid>
 
       <Group>
-        <GoToQuiz to="/">Back to home</GoToQuiz>
-        <GoToQuiz to="/hard">Quiz for newbie</GoToQuiz>
+        <GoToQuiz to='/'>Back to home</GoToQuiz>
+        <GoToQuiz to='/hard'>Quiz for newbie</GoToQuiz>
       </Group>
     </Layout>
   );

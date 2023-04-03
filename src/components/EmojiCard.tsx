@@ -8,11 +8,7 @@ interface EmojiCardProps {
   className?: string;
 }
 
-const EmojiCard: React.FC<EmojiCardProps> = ({
-  emojiData,
-  onClick,
-  className,
-}) => {
+const EmojiCard = ({ emojiData, onClick, className }: EmojiCardProps) => {
   return (
     <Wrapper onClick={onClick} className={className}>
       <EmojiWrapper

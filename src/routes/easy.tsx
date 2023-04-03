@@ -6,8 +6,7 @@ import EmojiCard from '../components/EmojiCard';
 import useGitmojiQuiz from '../hooks/useGitmojiQuiz';
 
 const EasyQuiz: React.FC = () => {
-  const { currentQuestion, choices, setNewQuestion } =
-    useGitmojiQuiz();
+  const { currentQuestion, choices, setNewQuestion } = useGitmojiQuiz();
   const [shake, setShake] = useState<string | null>(null);
 
   if (!currentQuestion || !choices) {
@@ -31,17 +30,13 @@ const EasyQuiz: React.FC = () => {
           <EmojiCard
             emojiData={emoji}
             key={emoji.name}
-            className={
-              shake === emoji.name ? 'shake shake-constant' : ''
-            }
+            className={shake === emoji.name ? 'shake shake-constant' : ''}
             onClick={async () => {
               if (emoji.name === currentQuestion.name) {
                 return setNewQuestion();
               }
               setShake(emoji.name);
-              await new Promise((resolve) =>
-                setTimeout(resolve, 1000)
-              );
+              await new Promise((resolve) => setTimeout(resolve, 1000));
               setShake(null);
             }}
           />
@@ -49,8 +44,8 @@ const EasyQuiz: React.FC = () => {
       </EasyGrid>
 
       <Group>
-        <GoToQuiz to="/">Back to home</GoToQuiz>
-        <GoToQuiz to="/hard">Quiz for gurus</GoToQuiz>
+        <GoToQuiz to='/'>Back to home</GoToQuiz>
+        <GoToQuiz to='/hard'>Quiz for gurus</GoToQuiz>
       </Group>
     </Layout>
   );

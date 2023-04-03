@@ -6,8 +6,7 @@ import gitmojis from '../data/gitmojis';
 import { EmojiData } from '../types/EmojiData';
 
 const useGitmojiQuiz = () => {
-  const [currentQuestion, setCurrentQuestion] =
-    useState<EmojiData | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<EmojiData | null>(null);
   const [choices, setChoices] = useState<EmojiData[] | null>(null);
 
   const setNewQuestion = useCallback(() => {
