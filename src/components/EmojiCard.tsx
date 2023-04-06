@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import colors from '../data/colors';
 import { EmojiData } from '../types/EmojiData';
 
@@ -10,78 +9,31 @@ interface EmojiCardProps {
 
 const EmojiCard = ({ emojiData, onClick, className }: EmojiCardProps) => {
   return (
-    <Wrapper onClick={onClick} className={className}>
-      <EmojiWrapper
-        style={{
-          backgroundColor: colors[emojiData.name],
-        }}
+    <div
+      className={`border rounded-3xl overflow-hidden shadow-sm cursor-pointer flex flex-col bg-white ${
+        className ? className : ''
+      }`}
+      onClick={onClick}
+    >
+      <div
+        className="flex justify-center items-center"
+        style={{ backgroundColor: colors[emojiData.name] }}
       >
-        <Emoji>{emojiData.emoji}</Emoji>
-      </EmojiWrapper>
-      <CodeWrapper>
-        <Code>{emojiData.code}</Code>
-      </CodeWrapper>
-    </Wrapper>
+        <div className='scale-150'>
+          <div className='scale-150'>
+            <div className="text-6xl md:text-3xl scale-150 p-28">
+              {emojiData.emoji}
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div className="flex-grow flex justify-center items-center">
+        <div className="text-xl font-bold p-4 sm:text-sm md:text-base lg:text-lg xl:text-xl">{emojiData.code}</div>
+      </div>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
-  cursor: pointer;
-
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-
-  @media screen and (max-width: 500px) {
-    flex-direction: row;
-  }
-`;
-
-const CardElement = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const EmojiWrapper = CardElement;
-const CodeWrapper = styled(CardElement)`
-  flex-grow: 1;
-`;
-
-const Emoji = styled.div`
-  font-size: 80px;
-  padding: 0.5em;
-  @media screen and (max-width: 500px) {
-    font-size: 40px;
-    padding: 0.1em;
-  }
-`;
-
-const Code = styled.div`
-  font-size: 30px;
-  font-weight: bold;
-  padding: 1em;
-
-  @media screen and (max-width: 600px) and (min-width: 500px) {
-    font-size: 13px;
-  }
-  @media screen and (max-width: 700px) and (min-width: 600px) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: 800px) and (min-width: 700px) {
-    font-size: 22px;
-  }
-  @media screen and (max-width: 850px) and (min-width: 800px) {
-    font-size: 26px;
-  }
-
-  @media screen and (max-width: 500px) {
-    font-size: 15px;
-    padding: 0.3em;
-  }
-`;
 
 export default EmojiCard;

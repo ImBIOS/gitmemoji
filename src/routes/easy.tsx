@@ -1,7 +1,5 @@
 import 'csshake';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import EmojiCard from '../components/EmojiCard';
 import useGitmojiQuiz from '../hooks/useGitmojiQuiz';
 
@@ -14,8 +12,8 @@ const EasyQuiz: React.FC = () => {
   }
 
   return (
-    <Layout>
-      <Question
+    <div className='min-h-screen bg-gray-100'>
+      <div className='shadow-sm py-10 px-4 rounded-3xl mx-5 mb-3 text-3xl text-center font-bold text-gray-500 bg-white sticky top-3'
         onClick={async () => {
           setShake(currentQuestion.name);
           await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -23,9 +21,9 @@ const EasyQuiz: React.FC = () => {
         }}
       >
         {currentQuestion.description}
-      </Question>
+      </div>
 
-      <EasyGrid>
+      <div className="flex-grow p-5 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2">
         {choices.map((emoji) => (
           <EmojiCard
             emojiData={emoji}
@@ -41,62 +39,19 @@ const EasyQuiz: React.FC = () => {
             }}
           />
         ))}
-      </EasyGrid>
+      </div>
 
-      <Group>
-        <GoToQuiz to='/'>Back to home</GoToQuiz>
-        <GoToQuiz to='/hard'>Quiz for gurus</GoToQuiz>
-      </Group>
-    </Layout>
+      <div className="flex flex-col items-center">
+        <div className="mt-5">
+          <a href="/" className="text-red-500 font-bold text-2xl">Back to home</a>
+        </div>
+          <div className="mb-5">
+            <a href="/hard" className="text-red-500 font-bold text-2xl">Quiz for gurus</a>
+          </div>
+      </div>  
+
+    </div>
   );
 };
-
-const Layout = styled.div`
-  min-height: 100vh;
-  background-color: #eee;
-`;
-
-const Question = styled.div`
-  box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
-  padding: 1em 0.5em;
-  font-size: 30px;
-  text-align: center;
-  color: #555;
-  font-weight: bold;
-  background-color: #fff;
-  position: sticky;
-  top: 0;
-`;
-
-const Grid = styled.div`
-  flex-grow: 1;
-  padding: 10px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-`;
-
-const EasyGrid = styled(Grid)`
-  grid-template-columns: 1fr 1fr;
-
-  @media screen and (max-width: 500px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const Group = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const GoToQuiz = styled(Link)`
-  color: #ef584a;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 40px;
-  margin-top: 20px;
-`;
 
 export default EasyQuiz;
