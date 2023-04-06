@@ -1,8 +1,5 @@
 import 'csshake';
 import { useState } from 'react';
-import styled from 'styled-components';
-import GoToQuiz from '../components/GoToQuiz';
-import Group from '../components/Group';
 import MinimalEmojiCard from '../components/MinimalEmojiCard';
 import gitmojis from '../data/gitmojis';
 import useGitmojiQuiz from '../hooks/useGitmojiQuiz';
@@ -16,8 +13,8 @@ const HardQuiz: React.FC = () => {
   }
 
   return (
-    <Layout>
-      <Question
+    <div className='min-h-screen bg-gray-100'>
+      <div className='shadow-sm py-10 px-4 rounded-3xl mx-5 mb-3 text-3xl text-center font-bold text-gray-500 bg-white sticky top-3'
         onClick={async () => {
           setShake(currentQuestion.name);
           await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -25,89 +22,37 @@ const HardQuiz: React.FC = () => {
         }}
       >
         {currentQuestion.description}
-      </Question>
-      <HardGrid>
-        {gitmojis.map((emoji) => (
-          <>
-            <MinimalEmojiCard
-              emojiData={emoji}
-              key={emoji.code}
-              className={shake === emoji.name ? 'shake shake-constant' : ''}
-              onClick={async () => {
-                if (emoji.name === currentQuestion.name) {
-                  return setNewQuestion();
-                }
-                setShake(emoji.name);
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-                setShake(null);
-              }}
-            />
-          </>
-        ))}
-      </HardGrid>
-
-      <Group>
-        <GoToQuiz to='/'>Back to home</GoToQuiz>
-        <GoToQuiz to='/hard'>Quiz for newbie</GoToQuiz>
-      </Group>
-    </Layout>
+      </div>
+      <div className='flex-grow-1 p-10'>
+        <div className='grid gap-x-2 gap-y-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8'>
+          {gitmojis.map((emoji) => (
+            <>
+              <MinimalEmojiCard
+                emojiData={emoji}
+                key={emoji.code}
+                className={shake === emoji.name ? 'shake shake-constant' : ''}
+                onClick={async () => {
+                  if (emoji.name === currentQuestion.name) {
+                    return setNewQuestion();
+                  }
+                  setShake(emoji.name);
+                  await new Promise((resolve) => setTimeout(resolve, 1000));
+                  setShake(null);
+                }}
+              />
+            </>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col items-center">
+        <div className="mt-5">
+          <a href="/" className="text-red-500 font-bold text-2xl">Back to home</a>
+        </div>
+        <div className="mb-5">
+          <a href="/easy" className="text-red-500 font-bold text-2xl">Quiz for newbie</a>
+        </div>
+      </div>
+    </div>
   );
 };
-
-const Layout = styled.div`
-  min-height: 100vh;
-  background-color: #eee;
-`;
-
-const Question = styled.div`
-  box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
-  padding: 1em 0.5em;
-  font-size: 30px;
-  text-align: center;
-  color: #555;
-  font-weight: bold;
-  background-color: #fff;
-  position: sticky;
-  top: 0;
-`;
-
-const Grid = styled.div`
-  flex-grow: 1;
-  padding: 10px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-`;
-
-const HardGrid = styled(Grid)`
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
-  @media screen and (max-width: 1000px) and (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-
-  @media screen and (max-width: 900px) and (min-width: 800px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-
-  @media screen and (max-width: 800px) and (min-width: 700px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-
-  @media screen and (max-width: 700px) and (min-width: 500px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-  @media screen and (max-width: 500px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-  @media screen and (max-width: 400px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  @media screen and (max-width: 300px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-`;
-
 export default HardQuiz;

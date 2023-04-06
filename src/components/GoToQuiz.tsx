@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+// import { Link } from 'react-router-dom';
 
-const GoToQuiz = styled(Link)`
-  color: #ef584a;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 40px;
-  margin-top: 20px;
-`;
+// const GoToQuiz = () => {
+//   return (
+//     <div>
+//     </div>
+//   );
+// };
 
-export default GoToQuiz;
+// export default GoToQuiz;

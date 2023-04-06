@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+// const ExternalLink = () => {
+//   return (
+//     <a className="text-red-500 no-underline">
+//       {/* {children} */}
+//     </a>
+//   );
+// };
 
-const ExternalLink = styled.a`
-  color: #ef584a;
-  text-decoration: none;
-`;
-
-export default ExternalLink;
+// export default ExternalLink;

@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import colors from '../data/colors';
 import { EmojiData } from '../types/EmojiData';
 
@@ -10,33 +9,16 @@ interface EmojiCardProps {
 
 const MinimalEmojiCard = ({ emojiData, onClick, className }: EmojiCardProps) => {
   return (
-    <Emoji
-      style={{
-        backgroundColor: colors[emojiData.name],
-      }}
-      onClick={onClick}
-      className={className}
-    >
-      {emojiData.emoji}
-    </Emoji>
+      <div
+        style={{
+          backgroundColor: colors[emojiData.name],
+        }}
+        onClick={onClick}
+        className={`${className} rounded-2xl overflow-hidden shadow-sm cursor-pointer flex justify-center items-center flex-col bg-white text-7xl p-10`}
+      >
+        {emojiData.emoji}
+      </div>
   );
 };
-
-const Emoji = styled.div`
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 80px;
-  cursor: pointer;
-
-  @media screen and (max-width: 500px) {
-    font-size: 40px;
-  }
-`;
 
 export default MinimalEmojiCard;

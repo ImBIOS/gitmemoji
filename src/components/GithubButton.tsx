@@ -1,37 +1,12 @@
-import * as React from 'react';
-import styled from 'styled-components';
+// const GitHubButton = () => {
+//   return (
+//     <a href='https://github.com/ImBIOS/gitmemoji' className="bg-yellow-900 text-white shadow-md inline-block cursor-pointer rounded-lg font-semibold py-3 px-4 hover:shadow-lg hover:shadow-white hover:translate-y-0.5">
+//       <span role='img' aria-label='star'>
+//         ⭐️
+//       </span>{' '}
+//       Github
+//     </a>
+//   );
+// };
 
-const GitHubButton: React.FC = () => {
-  return (
-    <Button href='https://github.com/ImBIOS/gitmemoji'>
-      <span role='img' aria-label='star'>
-        ⭐️
-      </span>{' '}
-      Github
-    </Button>
-  );
-};
-
-const Button = styled.a`
-  background-color: #a78674;
-  color: #fff;
-  box-shadow: 0 4px #795548;
-
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: 600;
-  padding: 0.75em 1em;
-  transition: none;
-  margin: 0.25em 0;
-  position: relative;
-
-  text-decoration: none;
-
-  &:hover {
-    top: 2px;
-    box-shadow: 0 2px #795548;
-  }
-`;
-
-export default GitHubButton;
+// export default GitHubButton;
