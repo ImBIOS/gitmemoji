@@ -1,4 +1,4 @@
-const Root: React.FC = () => {
+const Root = () => {
   return (
     <div className='flex flex-col items-center justify-evenly bg-blue-300 min-h-screen'>
       <div className='flex flex-col items-center'>

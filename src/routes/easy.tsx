@@ -3,7 +3,7 @@ import { useState } from 'react';
 import EmojiCard from '../components/EmojiCard';
 import useGitmojiQuiz from '../hooks/useGitmojiQuiz';
 
-const EasyQuiz: React.FC = () => {
+const EasyQuiz = () => {
   const { currentQuestion, choices, setNewQuestion } = useGitmojiQuiz();
   const [shake, setShake] = useState<string | null>(null);
 
@@ -45,10 +45,10 @@ const EasyQuiz: React.FC = () => {
         <div className="mt-5">
           <a href="/" className="text-red-500 font-bold text-2xl">Back to home</a>
         </div>
-          <div className="mb-5">
-            <a href="/hard" className="text-red-500 font-bold text-2xl">Quiz for gurus</a>
-          </div>
-      </div>  
+        <div className="mb-5">
+          <a href="/hard" className="text-red-500 font-bold text-2xl">Quiz for gurus</a>
+        </div>
+      </div>
 
     </div>
   );

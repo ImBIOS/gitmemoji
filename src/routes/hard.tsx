@@ -4,7 +4,7 @@ import MinimalEmojiCard from '../components/MinimalEmojiCard';
 import gitmojis from '../data/gitmojis';
 import useGitmojiQuiz from '../hooks/useGitmojiQuiz';
 
-const HardQuiz: React.FC = () => {
+const HardQuiz = () => {
   const { currentQuestion, setNewQuestion } = useGitmojiQuiz();
   const [shake, setShake] = useState<string | null>(null);
 
