@@ -13,7 +13,8 @@ const EasyQuiz = () => {
 
   return (
     <div className='min-h-screen bg-gray-100'>
-      <div className='shadow-sm py-10 px-4 rounded-3xl mx-5 mb-3 text-3xl text-center font-bold text-gray-500 bg-white sticky top-3'
+      <div
+        className='shadow-sm py-10 px-4 rounded-3xl mx-5 mb-3 text-3xl text-center font-bold text-gray-500 bg-white sticky top-3'
         onClick={async () => {
           setShake(currentQuestion.name);
           await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -23,7 +24,7 @@ const EasyQuiz = () => {
         {currentQuestion.description}
       </div>
 
-      <div className="flex-grow p-5 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2">
+      <div className='flex-grow p-5 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2'>
         {choices.map((emoji) => (
           <EmojiCard
             emojiData={emoji}
@@ -41,15 +42,18 @@ const EasyQuiz = () => {
         ))}
       </div>
 
-      <div className="flex flex-col items-center">
-        <div className="mt-5">
-          <a href="/" className="text-red-500 font-bold text-2xl">Back to home</a>
+      <div className='flex flex-col items-center'>
+        <div className='mt-5'>
+          <a href='/' className='text-red-500 font-bold text-2xl'>
+            Back to home
+          </a>
         </div>
-        <div className="mb-5">
-          <a href="/hard" className="text-red-500 font-bold text-2xl">Quiz for gurus</a>
+        <div className='mb-5'>
+          <a href='/hard' className='text-red-500 font-bold text-2xl'>
+            Quiz for gurus
+          </a>
         </div>
       </div>
-
     </div>
   );
 };
