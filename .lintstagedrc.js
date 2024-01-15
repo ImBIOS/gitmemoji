@@ -1,7 +1,7 @@
 const path = require('path')
 
 const buildEslintCommand = (filenames) =>
-  `pnpm eslint --fix --file ${filenames
+  `bunx eslint --fix --file ${filenames
     .map((f) => path.relative(process.cwd(), f))
     .join(' --file ')}`
 

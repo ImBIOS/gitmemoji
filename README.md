@@ -7,8 +7,8 @@ Gitmemoji is a web-based [gitmoji](https://gitmoji.dev/) quiz game. It is built 
 You can run Gitmemoji locally by cloning the repository and running the following commands:
 
 ```bash
-pnpm install
-pnpm run dev
+bun install
+bun run dev
 ```
 
 ## 📝 Contributing

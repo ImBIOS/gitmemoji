@@ -14,7 +14,8 @@ const HardQuiz = () => {
 
   return (
     <div className='min-h-screen bg-gray-100'>
-      <div className='shadow-sm py-10 px-4 rounded-3xl mx-5 mb-3 text-3xl text-center font-bold text-gray-500 bg-white sticky top-3'
+      <div
+        className='shadow-sm py-10 px-4 rounded-3xl mx-5 mb-3 text-3xl text-center font-bold text-gray-500 bg-white sticky top-3'
         onClick={async () => {
           setShake(currentQuestion.name);
           await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -44,12 +45,16 @@ const HardQuiz = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center">
-        <div className="mt-5">
-          <a href="/" className="text-red-500 font-bold text-2xl">Back to home</a>
+      <div className='flex flex-col items-center'>
+        <div className='mt-5'>
+          <a href='/' className='text-red-500 font-bold text-2xl'>
+            Back to home
+          </a>
         </div>
-        <div className="mb-5">
-          <a href="/easy" className="text-red-500 font-bold text-2xl">Quiz for newbie</a>
+        <div className='mb-5'>
+          <a href='/easy' className='text-red-500 font-bold text-2xl'>
+            Quiz for newbie
+          </a>
         </div>
       </div>
     </div>

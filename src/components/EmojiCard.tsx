@@ -1,5 +1,5 @@
 import colors from '../data/colors';
-import { EmojiData } from '../types/EmojiData.type';
+import { type EmojiData } from '../types/EmojiData.type';
 
 interface EmojiCardProps {
   emojiData: EmojiData;
@@ -10,8 +10,9 @@ interface EmojiCardProps {
 const EmojiCard = ({ emojiData, onClick, className }: EmojiCardProps) => {
   return (
     <div
-      className={`border rounded-3xl overflow-hidden shadow-sm cursor-pointer flex flex-col bg-white ${className ? className : ''
-        }`}
+      className={`border rounded-3xl overflow-hidden shadow-sm cursor-pointer flex flex-col bg-white ${
+        className ? className : ''
+      }`}
       onClick={onClick}
     >
       <div

@@ -3,7 +3,7 @@ import shuffle from 'lodash/shuffle';
 import { useCallback, useEffect, useState } from 'react';
 
 import gitmojis from '../data/gitmojis';
-import { EmojiData } from '../types/EmojiData.type';
+import { type EmojiData } from '../types/EmojiData.type';
 
 const useGitmojiQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState<EmojiData | null>(null);

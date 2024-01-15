@@ -1,5 +1,5 @@
 import colors from '../data/colors';
-import { EmojiData } from '../types/EmojiData.type';
+import { type EmojiData } from '../types/EmojiData.type';
 
 interface EmojiCardProps {
   emojiData: EmojiData;
